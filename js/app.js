@@ -39,3 +39,16 @@ accordions.forEach(acc => {
         }
     });
 });
+
+
+/* CONTADOR DE VISITAS */
+let visitas = localStorage.getItem("visitas");
+
+  if (visitas === null) {
+    visitas = 1;
+  } else {
+    visitas = parseInt(visitas) + 1;
+  }
+
+  localStorage.setItem("visitas", visitas);
+  document.getElementById("contador").textContent = visitas;
