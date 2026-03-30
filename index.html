@@ -284,6 +284,19 @@
 
 <p>Visitas: <span id="contador">0</span></p>
 
+<script>
+  let visitas = localStorage.getItem("visitas");
+
+  if (visitas === null) {
+    visitas = 1;
+  } else {
+    visitas = parseInt(visitas) + 1;
+  }
+
+  localStorage.setItem("visitas", visitas);
+  document.getElementById("contador").textContent = visitas;
+</script>
+
 <script src="js/app.js"></script>
 
 </body>
